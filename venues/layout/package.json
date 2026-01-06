@@ -1,0 +1,19 @@
+{
+  "name": "@css-pad/layout",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx webpack serve",
+    "bundle": "npx webpack",
+    "prod": "npx webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.15.1",
+  "dependencies": {
+    "@css-pad/common-ui": "workspace:*",
+    "@css-pad/config": "workspace:*"
+  }
+}

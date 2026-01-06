@@ -1,0 +1,45 @@
+{
+	// 参考网址：https://prettier.nodejs.cn/
+	/*单行长度*/
+	printWidth: 100,
+	/*缩进长度*/
+	tabWidth: 2,
+	/*使用tab缩进时，是否使用制表符（为false时使用空格）*/
+	useTabs: false,
+	/*句末使用分号*/
+	semi: true,
+	/*是否使用单引号*/
+	singleQuote: false,
+	/*仅在必需时为对象的属性添加引号*/
+	quoteProps: "as-needed",
+	/*jsx中使用单引号*/
+	jsxSingleQuote: true,
+	/*在多行逗号分隔的语法结构中尽可能打印尾随逗号。*/
+	trailingComma: "all",
+	/*是否填充对象字面量中括号之间的空格*/
+	bracketSpacing: true,
+	/*如果对象在左括号和第一个属性之间有换行符，则保留为多行*/
+	objectWrap: "preserve",
+	/*多行 HTML（HTML、JSX、Vue、Angular）元素的‘>’折行放置*/
+	bracketSameLine: true,
+	/*单参数箭头函数参数周围使用圆括号 (x) => x*/
+	arrowParens: "always",
+	/*文件顶部包含特殊注释（称为指令） @noprettier 或者 @noformat，Prettier 可以允许单个文件选择不进行格式化。*/
+	checkIgnorePragma: true,
+	/*什么都不做, markdown文档保持原样*/
+	proseWrap: "preserve",
+	/*无需顶部注释即可格式化*/
+	requirePragma: false,
+	/*在已被preitter格式化的文件顶部不加上标注*/
+	insertPragma: false,
+	/*所有HTML标签周围的空格(或缺少空格)被认为是无关紧要的*/
+	htmlWhitespaceSensitivity: "ignore",
+	/*在 Vue 文件中缩进脚本和样式标签*/
+	vueIndentScriptAndStyle: true,
+	/*结束行形式*/
+	endOfLine: "auto",
+	/*不格式化嵌入在文件中的引用代码*/
+	embeddedLanguageFormatting: "off",
+	/*在HTML、Vue和JSX中强制每行使用单个属性。*/
+	singleAttributePerLine: true,
+}

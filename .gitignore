@@ -1,0 +1,8 @@
+# 依赖或者编译产物文件夹
+node_modules/
+dist/
+target/
+
+
+# 排除的文件
+!.gitkeep

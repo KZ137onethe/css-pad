@@ -1,0 +1,7 @@
+packages:
+  #
+  - packages/*
+  # 内部
+  - internal/*
+  # CSS 场馆
+  - venues/*
