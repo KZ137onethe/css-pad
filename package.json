@@ -10,19 +10,17 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^9.2.1",
-    "css-loader": "^7.1.2",
-    "html-webpack-plugin": "^5.6.5",
-    "postcss": "^8.5.6",
-    "postcss-cli": "^11.0.1",
-    "postcss-preset-env": "^10.3.1",
-    "postcss-scss": "^4.0.9",
-    "sass": "^1.91.0",
-    "sass-loader": "^16.0.6",
-    "style-loader": "^4.0.0",
-    "webpack": "^5.104.1",
-    "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.2",
-    "webpack-merge": "^6.0.1"
+    "concurrently": "catalog:",
+    "css-loader": "catalog:",
+    "html-webpack-plugin": "catalog:",
+    "postcss": "catalog:",
+    "postcss-preset-env": "catalog:",
+    "sass": "catalog:",
+    "sass-loader": "catalog:",
+    "style-loader": "catalog:",
+    "webpack": "catalog:",
+    "webpack-cli": "catalog:",
+    "webpack-dev-server": "catalog:",
+    "webpack-merge": "catalog:"
   }
 }
