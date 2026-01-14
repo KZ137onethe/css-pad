@@ -1,0 +1,10 @@
+article {
+  width: clamp(40%, 960px, 80%);
+  padding: 20px;
+  h2 {
+    text-align: center;
+  }
+  p {
+    text-indent: 2em;
+  }
+}

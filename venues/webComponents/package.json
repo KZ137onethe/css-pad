@@ -1,12 +1,10 @@
 {
-  "name": "@css-pad/layout",
+  "name": "@css-pad/web-components",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npx webpack serve",
-    "bundle": "npx webpack",
-    "prod": "npx webpack --mode production"
+    "dev": "npx webpack serve"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +13,5 @@
   "dependencies": {
     "@css-pad/common-ui": "workspace:*",
     "@css-pad/config": "workspace:*"
-  },
-  "devDependencies": {}
+  }
 }
