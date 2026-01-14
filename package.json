@@ -22,5 +22,8 @@
     "webpack-cli": "catalog:",
     "webpack-dev-server": "catalog:",
     "webpack-merge": "catalog:"
+  },
+  "dependencies": {
+    "es-toolkit": "catalog:"
   }
 }
