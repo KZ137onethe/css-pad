@@ -25,7 +25,7 @@ class WordCount extends HTMLElement {
       return count;
     }
 
-    const shadow = this.attachShadow({ mode: "closed" });
+    const shadow = this.attachShadow({ mode: "open" });
     const span = document.createElement("span");
     Object.assign(span.style, {
       color: "orange",
