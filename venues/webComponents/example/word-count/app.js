@@ -9,7 +9,11 @@ class WordCount extends HTMLElement {
 
   constructor() {
     super();
+  }
 
+  // 此处编写元素功能
+  // 每当元素添加到文档中时调用。
+  connectedCallback() {
     const parentEl = this.parentNode;
     const text = `共 ${wordCount(parentEl)} 字`;
 
@@ -38,11 +42,6 @@ class WordCount extends HTMLElement {
     this.parentNode.addEventListener("input", () => {
       span.textContent = `共 ${wordCount(parentEl)} 字`;
     });
-  }
-
-  // 此处编写元素功能
-  // 每当元素添加到文档中时调用。
-  connectedCallback() {
     console.log("自定义元素添加至页面");
   }
 
@@ -63,3 +62,8 @@ class WordCount extends HTMLElement {
 }
 
 customElements.define("word-count", WordCount);
+
+const wordCountEl = document.querySelector("word-count");
+
+// Element.attachShadow(options) , 当options.mode 为 open 则可以访问
+console.log(wordCountEl.shadowRoot);

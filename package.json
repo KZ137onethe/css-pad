@@ -12,6 +12,7 @@
   "devDependencies": {
     "@types/node": "catalog:types",
     "concurrently": "catalog:",
+    "copy-webpack-plugin": "catalog:",
     "css-loader": "catalog:",
     "esbuild": "catalog:build",
     "fork-ts-checker-webpack-plugin": "catalog:",
