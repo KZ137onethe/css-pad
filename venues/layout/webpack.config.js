@@ -1,9 +1,9 @@
-const path = require("path");
-const setConf = require("@css-pad/config");
-const { merge } = require("webpack-merge");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+import path from "node:path";
+import setConf from "@css-pad/config";
+import { merge } from "webpack-merge";
+import HtmlWebpackPlugin from "html-webpack-plugin";
 
-module.exports = (env, args) => {
+export default function (env, args) {
   const { mode = "development" } = args;
   return merge([
     setConf(mode),
@@ -26,4 +26,4 @@ module.exports = (env, args) => {
       },
     },
   ]);
-};
+}

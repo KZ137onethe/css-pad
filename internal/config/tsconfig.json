@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "incremental": false,
+    "allowJs": false,
+    "downlevelIteration": true,
+    "moduleDetection": "force",
+    "strict": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": false,
+    "strictPropertyInitialization": true,
+    "strictBindCallApply": true,
+    "noImplicitAny": false,
+    "noImplicitThis": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+    "alwaysStrict": true,
+    "checkJs": false,
+    "baseUrl": "./",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "lib": ["ESNext", "WebWorker", "ES2019.Symbol", "ESNext.Intl"],
+    "paths": {
+      "#/*": ["./src"]
+    }
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules", "target"],
+  "removeComments": true
+}

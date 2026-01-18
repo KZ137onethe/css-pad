@@ -3,9 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "exports": {
-    ".": "./index.js"
+    "./*": {
+      "import": "./target/*.mjs"
+    }
   },
-  "scripts": {},
+  "scripts": {
+    "dev": "node ./build/index.js"
+  },
+  "files": [
+    "target"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC"

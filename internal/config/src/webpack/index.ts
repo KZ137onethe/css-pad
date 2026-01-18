@@ -1,5 +1,10 @@
-const path = require("path");
-const { merge } = require("webpack-merge");
+import * as path from "path";
+
+// @ts-ignore
+import tools from "#/tools/index";
+
+const { getCurrentPath, adaptiveMerge } = tools;
+const __dirname = getCurrentPath(import.meta.url);
 
 const conConf = {
   output: {
@@ -9,6 +14,14 @@ const conConf = {
   },
   module: {
     rules: [
+      {
+        test: /\.([cm]?ts|tsx?)$/i,
+        use: [
+          {
+            loader: "ts-loader",
+          },
+        ],
+      },
       {
         test: /\.s[ac]ss$/,
         use: [
@@ -29,11 +42,26 @@ const conConf = {
           },
         ],
       },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: "style-loader",
+          },
+          {
+            loader: "css-loader",
+            options: {
+              url: true,
+            },
+          },
+        ],
+      },
     ],
   },
+  plugins: [],
   resolve: {
     modules: ["node_modules"],
-    extensions: [".js", ".json"],
+    extensions: [".mts", ".cts", ".ts", ".tsx", ".js", ".json"],
     alias: {
       "#": path.resolve(__dirname, "src"),
     },
@@ -62,6 +90,10 @@ const devConf = {
       },
     },
   },
+  optimization: {
+    usedExports: true,
+    sideEffects: true,
+  },
 };
 
 const prodConf = {
@@ -69,13 +101,13 @@ const prodConf = {
   devtool: false,
 };
 
-module.exports = (env) => {
+export default function (env) {
   switch (env) {
     case "development": {
-      return merge([conConf, devConf]);
+      return adaptiveMerge(conConf, devConf);
     }
     case "production": {
-      return merge([conConf, prodConf]);
+      return adaptiveMerge(conConf, prodConf);
     }
   }
-};
+}
