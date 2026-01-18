@@ -16,14 +16,17 @@ const ctx = await esbuild.context({
   // 将 esbuild 生成的文件的文件扩展名自定义
   outExtension: { ".js": ".mjs" },
   format: "esm",
+  // 标记为 外部，不参与打包
+  external: ["mini-css-extract-plugin", "fork-ts-checker-webpack-plugin"],
   sourcemap: "external",
-  minify: true,
+  minify: false,
   treeShaking: true,
   allowOverwrite: true,
   alias: {
     "#": rootPath,
   },
   resolveExtensions: [".ts"],
+  plugins: [],
 });
 
 // 监听

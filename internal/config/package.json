@@ -2,9 +2,11 @@
   "name": "@css-pad/config",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "exports": {
     "./*": {
-      "import": "./target/*.mjs"
+      "import": "./target/*.mjs",
+      "require": "./target/*.cjs"
     }
   },
   "scripts": {

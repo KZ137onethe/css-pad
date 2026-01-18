@@ -1,5 +1,6 @@
 import * as path from "path";
-
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+// import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 // @ts-ignore
 import tools from "#/tools/index";
 
@@ -26,7 +27,7 @@ const conConf = {
         test: /\.s[ac]ss$/,
         use: [
           {
-            loader: "style-loader",
+            loader: MiniCssExtractPlugin.loader,
           },
           {
             loader: "css-loader",
@@ -58,7 +59,13 @@ const conConf = {
       },
     ],
   },
-  plugins: [],
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "stylesheets/[name].css",
+      chunkFilename: "stylesheets/[name].chunk.css",
+    }),
+    // new ForkTsCheckerWebpackPlugin(),
+  ],
   resolve: {
     modules: ["node_modules"],
     extensions: [".mts", ".cts", ".ts", ".tsx", ".js", ".json"],
