@@ -1,41 +1,13 @@
 import "@css-pad/common-ui/styles/index";
-import "./style.scss";
+import sheet from "./component.scss" assert { type: "css" };
 
 class PopupInfo extends HTMLElement {
   constructor() {
     super();
   }
 
-  async appendStyle() {
-    const styleContent = `
-			.wrapper { position: relative; }
-
-			.info {
-				font-size: 0.8rem;
-				width: 200px;
-				display: inline-block;
-				border: 1px solid black;
-				padding: 10px;
-				background: white;
-				border-radius: 10px;
-				opacity: 0;
-				transition: 0.6s all;
-				position: absolute;
-				bottom: 20px;
-				left: 10px;
-				z-index: 3;
-			}
-
-			img {
-				width: 1.2rem;
-			}
-
-			.icon:hover + .info, .icon:focus + .info {
-				opacity: 1;
-			}`;
-    const sheet = new CSSStyleSheet();
-    sheet.replaceSync(styleContent.replace(/[\n\t]/g, ""));
-    this.shadowRoot.adoptedStyleSheets.push(sheet);
+  appendStyle() {
+    this.shadowRoot.adoptedStyleSheets = [sheet];
   }
 
   connectedCallback() {
