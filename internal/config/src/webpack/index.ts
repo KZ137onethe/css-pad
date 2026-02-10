@@ -25,72 +25,37 @@ const conConf = {
       },
 			{
 				test: /\.s[ac]ss$/,
-				oneOf: [
+				use: [
 					{
-						assert: { type: "css" },
-						use:[
-							{
-								loader: "css-loader",
-								options: {
-									exportType: "css-style-sheet",
-									// Other options
-								},
-							},
-							{
-								loader: "sass-loader",
-								options: {
-									api: "modern-compiler",
-								},
-							},
-						]
+						loader: MiniCssExtractPlugin.loader,
 					},
 					{
-						use: [
-							{
-								loader: MiniCssExtractPlugin.loader,
-							},
-							{
-								loader: "css-loader",
-								options: {
-									url: true,
-								},
-							},
-							{
-								loader: "sass-loader",
-								options: {
-									api: "modern-compiler",
-								},
-							},
-						],
-					}
-				]
-			},
-      {
-        test: /\.css$/,
-				oneOf:[
-					{
-						assert: { type: "css" },
 						loader: "css-loader",
 						options: {
-							exportType: "css-style-sheet",
-							// Other options
+							url: true,
 						},
 					},
 					{
-						use:[
-							{
-								loader: MiniCssExtractPlugin.loader,
-							},
-							{
-
-								loader: "css-loader",
-								options: {
-									url: true,
-								},
-							},
-						],
-					}
-				]
+						loader: "sass-loader",
+						options: {
+							api: "modern-compiler",
+						},
+					},
+				],
+			},
+      {
+        test: /\.css$/,
+				use:[
+					{
+						loader: MiniCssExtractPlugin.loader,
+					},
+					{
+						loader: "css-loader",
+						options: {
+							url: true,
+						},
+					},
+				],
       },
     ],
   },
