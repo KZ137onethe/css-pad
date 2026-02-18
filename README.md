@@ -2,20 +2,20 @@
 
 欢迎来到 CSS 训练场
 
-想法：
+### 目的
 
-1. 不想写css，只想写sass
+1. 巩固学习的 css 知识
+2. 实现一些实用，有趣，绚烂的 css 效果/布局/场景
+3. 使用非 Vue/React 等框架，通过 构建工具 和 monorepo 来做场地，巩固这方面的知识
 
-   实现：node.js监听某一个demo的文件变化。
+### 支持
 
-   比如说：
+- [x] JavaScript/TypeScript
 
-   监听styles.scss，如果它发生变化则调用sass的api编译该文件成css文件，然后再通过postcss.config.js的编译成最终的css产物，这两个产物都保留在当前目录下的一个target目录中（结束后可以选择性把中间的产物删除）
+- [x] css/sass
 
-2. 不想写css和sass，只想写unocss
+- [x] webpack构建打包
 
-   
+- [x] esbuild构建打包TypeScript
 
-3. 不想写javascript，只想写typescript
-
-上面的实现都需要编译，能不能做一个单个编译或者全量编译呢？
+- [ ] eslint格式化
