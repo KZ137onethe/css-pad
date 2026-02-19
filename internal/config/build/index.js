@@ -1,10 +1,11 @@
+import * as path from "node:path";
+import { fileURLToPath } from "node:url";
 import * as esbuild from "esbuild";
-import * as path from "path";
-import { fileURLToPath } from "url";
 
 const rootPath = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../src");
 
 // 构建
+// eslint-disable-next-line antfu/no-top-level-await
 const ctx = await esbuild.context({
   entryPoints: [
     { in: path.resolve(rootPath, "tools/index.ts"), out: "tools" },
@@ -30,4 +31,5 @@ const ctx = await esbuild.context({
 });
 
 // 监听
+// eslint-disable-next-line antfu/no-top-level-await
 await ctx.watch();

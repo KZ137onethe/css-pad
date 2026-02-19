@@ -1,21 +1,24 @@
 {
   "name": "@css-pad/config",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
   "exports": {
     "./*": {
       "import": "./target/*.mjs",
       "require": "./target/*.cjs"
     }
   },
-  "scripts": {
-    "dev": "node ./build/index.js"
-  },
   "files": [
     "target"
   ],
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "scripts": {
+    "dev": "node ./build/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:"
+  }
 }

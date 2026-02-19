@@ -1,8 +1,8 @@
-import { fileURLToPath } from "url";
-import { dirname } from "path";
-import { UnknownRecord } from "type-fest";
+import type { UnknownRecord } from "type-fest";
+import { dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 
-import { mergeWith, uniq, cloneDeep, intersection, difference } from "es-toolkit";
+import { cloneDeep, difference, intersection, mergeWith, uniq } from "es-toolkit";
 
 /**
  * 自适应合并,同 webpack-merge 的默认行为，主要用于合并webpack配置选项
@@ -15,7 +15,7 @@ import { mergeWith, uniq, cloneDeep, intersection, difference } from "es-toolkit
  * @returns
  */
 function adaptiveMerge(target: UnknownRecord, source: UnknownRecord) {
-  const protoName = (val: unknown) => Object.prototype.toString.call(val).slice(8, -1);
+  const protoName = (val: unknown): string => Object.prototype.toString.call(val).slice(8, -1);
   const primitiveSet = new Set([
     "string",
     "number",
@@ -37,8 +37,8 @@ function adaptiveMerge(target: UnknownRecord, source: UnknownRecord) {
     // 都是基础数据类型，后面覆盖前面；
     if (
       [originType, newValType]
-        .map((val) => String.prototype.toLowerCase.call(val))
-        .every((val) => primitiveSet.has(val))
+        .map(val => String.prototype.toLowerCase.call(val))
+        .every(val => primitiveSet.has(val))
     ) {
       return newVal;
     }
@@ -52,8 +52,8 @@ function adaptiveMerge(target: UnknownRecord, source: UnknownRecord) {
     // 都是对象，那么里面的对象会递归合并成一个对象
     if (
       [originType, newValType]
-        .map((val) => String.prototype.toLowerCase.call(val))
-        .every((val) => val === "object")
+        .map(val => String.prototype.toLowerCase.call(val))
+        .every(val => val === "object")
     ) {
       const clonedVal = cloneDeep(originVal);
 
@@ -87,7 +87,7 @@ function multipleAdaptiveMerge(target: UnknownRecord, ...args: UnknownRecord[]) 
 }
 
 // 获取当前文件路径
-function getCurrentPath(metaUrl: string) {
+function getCurrentPath(metaUrl: string): string {
   return dirname(fileURLToPath(metaUrl));
 }
 

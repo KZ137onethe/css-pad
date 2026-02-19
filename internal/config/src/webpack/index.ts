@@ -1,8 +1,7 @@
-import * as path from "path";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import * as path from "node:path";
 // import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
-// @ts-ignore
-import tools from "#/tools/index";
+import tools from "#/tools/index.ts";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 const { getCurrentPath, adaptiveMerge } = tools;
 const __dirname = getCurrentPath(import.meta.url);
@@ -23,39 +22,39 @@ const conConf = {
           },
         ],
       },
-			{
-				test: /\.s[ac]ss$/,
-				use: [
-					{
-						loader: MiniCssExtractPlugin.loader,
-					},
-					{
-						loader: "css-loader",
-						options: {
-							url: true,
-						},
-					},
-					{
-						loader: "sass-loader",
-						options: {
-							api: "modern-compiler",
-						},
-					},
-				],
-			},
+      {
+        test: /\.s[ac]ss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: "css-loader",
+            options: {
+              url: true,
+            },
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              api: "modern-compiler",
+            },
+          },
+        ],
+      },
       {
         test: /\.css$/,
-				use:[
-					{
-						loader: MiniCssExtractPlugin.loader,
-					},
-					{
-						loader: "css-loader",
-						options: {
-							url: true,
-						},
-					},
-				],
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: "css-loader",
+            options: {
+              url: true,
+            },
+          },
+        ],
       },
     ],
   },
