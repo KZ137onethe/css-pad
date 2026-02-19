@@ -2,19 +2,24 @@
   "name": "css-pad",
   "version": "1.0.0",
   "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "dependencies": {
+    "es-toolkit": "catalog:"
+  },
   "devDependencies": {
-    "@types/node": "catalog:types",
+    "@antfu/eslint-config": "catalog:rules",
+    "@types/node": "catalog:",
     "concurrently": "catalog:",
     "copy-webpack-plugin": "catalog:",
     "css-loader": "catalog:",
     "esbuild": "catalog:build",
+    "eslint": "catalog:rules",
     "fork-ts-checker-webpack-plugin": "catalog:",
     "html-webpack-plugin": "catalog:",
     "mini-css-extract-plugin": "catalog:",
@@ -30,8 +35,5 @@
     "webpack-cli": "catalog:",
     "webpack-dev-server": "catalog:",
     "webpack-merge": "catalog:"
-  },
-  "dependencies": {
-    "es-toolkit": "catalog:"
   }
 }
