@@ -12,7 +12,6 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "types": [],
     "allowJs": false,
     "checkJs": false,
     "strict": true,
