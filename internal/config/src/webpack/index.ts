@@ -107,7 +107,7 @@ const prodConf = {
   devtool: false,
 };
 
-export default function (env) {
+export default function (env: string): Record<string, any> {
   switch (env) {
     case "development": {
       return adaptiveMerge(conConf, devConf);
@@ -115,5 +115,7 @@ export default function (env) {
     case "production": {
       return adaptiveMerge(conConf, prodConf);
     }
+    default:
+      return undefined as never;
   }
 }

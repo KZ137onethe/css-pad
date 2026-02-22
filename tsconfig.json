@@ -12,6 +12,7 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
     "allowJs": false,
     "checkJs": false,
     "strict": true,
@@ -29,6 +30,7 @@
     "declaration": false,
     "declarationMap": false,
     "downlevelIteration": true,
+    "noEmit": true,
     "removeComments": true
   },
   "include": ["internal", "packages"],
