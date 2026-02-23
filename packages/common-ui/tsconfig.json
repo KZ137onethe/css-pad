@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "paths": {
+      "#/*": ["/*"],
+      "@/*": ["src/*"]
+    },
+    "typeRoots": ["./node_modules/@types", "./types"],
+    "allowImportingTsExtensions": false,
+    "noEmit": false,
+    "esModuleInterop": true
+  },
+  "include": ["**/*"],
+  "exclude": ["node_modules", "target", "build"]
+}

@@ -1,16 +1,19 @@
 {
   "name": "@css-pad/common-ui",
   "version": "1.0.0",
+  "packageManager": "pnpm@10.15.1",
   "description": "",
-  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
   "exports": {
     "./styles/*": "./styles/*.scss"
   },
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "preview": "npx webpack serve"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.15.1"
+  "dependencies": {
+    "@css-pad/config": "workspace:*"
+  }
 }
