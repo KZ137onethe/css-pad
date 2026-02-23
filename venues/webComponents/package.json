@@ -1,15 +1,15 @@
 {
   "name": "@css-pad/web-components",
   "version": "1.0.0",
+  "packageManager": "pnpm@10.15.1",
   "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
   "main": "index.js",
   "scripts": {
     "dev": "npx webpack serve"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.15.1",
   "dependencies": {
     "@css-pad/common-ui": "workspace:*",
     "@css-pad/config": "workspace:*"

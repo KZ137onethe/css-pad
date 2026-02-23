@@ -160,7 +160,11 @@ importers:
         specifier: 'catalog:'
         version: 25.2.2
 
-  packages/common-ui: {}
+  packages/common-ui:
+    dependencies:
+      '@css-pad/config':
+        specifier: workspace:*
+        version: link:../../internal/config
 
   venues/layout:
     dependencies:

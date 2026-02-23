@@ -1,13 +1,13 @@
-import path from "path";
-import setConf from "@css-pad/config/webpack";
+import path from "node:path";
 import tools from "@css-pad/config/tools";
+import setConf from "@css-pad/config/webpack";
 
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import CopyPlugin from "copy-webpack-plugin";
-
-import { merge, mergeWithCustomize } from "webpack-merge";
 import * as es from "es-toolkit";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { merge, mergeWithCustomize } from "webpack-merge";
 
 const { getCurrentPath } = tools;
 const __dirname = getCurrentPath(import.meta.url);
