@@ -32,6 +32,7 @@ export default antfu(
       "unused-imports/no-unused-vars": "warn",
       // 不允许使用 console，会报 warn 警告，但console.warn和console.error可以使用
       "no-console": ["warn", { allow: ["warn", "error"] }],
+      "style/brace-style": ["error", "1tbs"],
     },
   },
 );

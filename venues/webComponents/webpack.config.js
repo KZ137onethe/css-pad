@@ -34,6 +34,7 @@ export default function (env, args) {
       "word-count": "./word-count/app.js",
       "popup-info": "./popup-info/app.js",
       "emoji-switch": "./emoji-switch/app.js",
+      "expanding-list": "./expanding-list/app.js",
     },
     module: {
       rules: [
@@ -109,7 +110,10 @@ export default function (env, args) {
     },
     plugins: [
       new CopyPlugin({
-        patterns: [{ from: "popup-info/assets", to: "assets" }],
+        patterns: [
+          { from: "popup-info/assets", to: "assets" },
+          { from: "expanding-list/assets", to: "assets" },
+        ],
       }),
       new HtmlWebpackPlugin({
         template: "./word-count/index.html",
@@ -126,10 +130,15 @@ export default function (env, args) {
         filename: "emoji-switch/index.html",
         chunks: ["emoji-switch"],
       }),
+      new HtmlWebpackPlugin({
+        template: "./expanding-list/index.html",
+        filename: "expanding-list/index.html",
+        chunks: ["expanding-list"],
+      }),
     ],
     devServer: {
       open: {
-        target: "emoji-switch",
+        target: "expanding-list",
       },
     },
   });
