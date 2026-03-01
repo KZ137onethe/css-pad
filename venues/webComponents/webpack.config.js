@@ -35,6 +35,7 @@ export default function (env, args) {
       "popup-info": "./popup-info/app.js",
       "emoji-switch": "./emoji-switch/app.js",
       "expanding-list": "./expanding-list/app.js",
+      "custom-square": "./custom-square/app.js",
     },
     module: {
       rules: [
@@ -135,10 +136,15 @@ export default function (env, args) {
         filename: "expanding-list/index.html",
         chunks: ["expanding-list"],
       }),
+      new HtmlWebpackPlugin({
+        template: "./custom-square/index.html",
+        filename: "custom-square/index.html",
+        chunks: ["custom-square"],
+      }),
     ],
     devServer: {
       open: {
-        target: "expanding-list",
+        target: "custom-square",
       },
     },
   });

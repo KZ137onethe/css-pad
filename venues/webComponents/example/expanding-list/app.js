@@ -1,6 +1,11 @@
 import "./component.scss";
 
 class ExpandingList extends HTMLUListElement {
+  // eslint-disable-next-line no-useless-constructor
+  constructor() {
+    super();
+  }
+
   connectedCallback() {
     // 获取这个 自定义 ul 元素的子 ul 和 li 元素
     // li 元素可以是容器，如果它们包含 ul
