@@ -36,6 +36,7 @@ export default function (env, args) {
       "emoji-switch": "./emoji-switch/app.js",
       "expanding-list": "./expanding-list/app.js",
       "custom-square": "./custom-square/app.js",
+      "filled-circle": "./filled-circle/app.js",
     },
     module: {
       rules: [
@@ -140,6 +141,11 @@ export default function (env, args) {
         template: "./custom-square/index.html",
         filename: "custom-square/index.html",
         chunks: ["custom-square"],
+      }),
+      new HtmlWebpackPlugin({
+        template: "./filled-circle/index.html",
+        filename: "filled-circle/index.html",
+        chunks: ["filled-circle"],
       }),
     ],
     devServer: {
