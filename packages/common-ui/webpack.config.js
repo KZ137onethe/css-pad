@@ -30,6 +30,7 @@ export default function (env, args) {
   const { mode = "development" } = args;
   return mergeFn(setConf(mode), {
     entry: {
+      main: "./play/index.ts",
       "e-switch": "./src/switch/index.ts",
     },
     module: {
@@ -108,7 +109,7 @@ export default function (env, args) {
       new HtmlWebpackPlugin({
         template: "./play/index.html",
         filename: "play/index.html",
-        chunks: ["e-switch"],
+        chunks: ["e-switch", "main"],
       }),
     ],
     devServer: {

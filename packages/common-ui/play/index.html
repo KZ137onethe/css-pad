@@ -8,16 +8,19 @@
     <title>组件库演练场</title>
     <style>
       #app {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         min-height: 100vh;
       }
     </style>
   </head>
   <body>
     <div id="app">
-      <e-switch size="default"></e-switch>
+      <fieldset>
+        <legend>switch 组件</legend>
+        <e-switch
+          id="large"
+          size="large"></e-switch>
+        <e-switch id="default"></e-switch>
+      </fieldset>
     </div>
   </body>
 </html>

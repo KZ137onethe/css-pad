@@ -10,7 +10,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "es-toolkit": "catalog:"
+    "es-toolkit": "catalog:",
+    "mobx": "catalog:"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:rules",

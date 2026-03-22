@@ -1,15 +1,33 @@
+import { makeAutoObservable } from "mobx";
 import sheet from "./style.scss" assert { type: "css" };
 
 interface Props {
   size: "default" | "small" | "large" | null;
 }
 
+interface StateProps {
+  loaded?: boolean;
+  open?: boolean;
+}
+
+class ESwitchState implements StateProps {
+  open = false;
+  constructor() {
+    makeAutoObservable(this);
+  }
+}
+
 class ESwitch extends HTMLElement {
   private class_prefix = "switch-";
-
   private rootEl?: HTMLLabelElement;
+  public state: StateProps;
+  static get observedAttributes(): string[] {
+    return ["size"];
+  }
+
   constructor() {
     super();
+    this.state = new ESwitchState();
   }
 
   appendStyles(): void {
@@ -32,6 +50,14 @@ class ESwitch extends HTMLElement {
     }
   }
 
+  watchElement(): void {
+    const inputEl = this.rootEl?.querySelector("input");
+
+    inputEl?.addEventListener("input", (e: InputEvent) => {
+      this.state.open = (e.target as HTMLInputElement).checked;
+    });
+  }
+
   connectedCallback(): void {
     const shadow = this.attachShadow({ mode: "open" });
 
@@ -50,6 +76,17 @@ class ESwitch extends HTMLElement {
     this.setClassList();
 
     shadow.append(rootEl);
+    this.state.loaded = true;
+
+    // 开启监听
+    this.watchElement();
+  }
+
+  attributeChangedCallback(name: string, oldVal: string, newVal: string): void {
+    // 保证在组件加载完成后，才能调用
+    if (this.state.loaded) {
+      this.setClassList();
+    }
   }
 }
 

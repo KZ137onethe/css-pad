@@ -12,6 +12,7 @@ catalog:
   fork-ts-checker-webpack-plugin: ^9.1.0
   html-webpack-plugin: ^5.6.6
   mini-css-extract-plugin: ^2.10.0
+  mobx: ^6.15.0
   postcss: ^8.5.6
   postcss-preset-env: ^10.6.1
   sass: ^1.97.3
