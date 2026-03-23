@@ -7,11 +7,15 @@
   "license": "ISC",
   "keywords": [],
   "exports": {
-    "./styles/*": "./styles/*.scss"
+    "./styles/*": "./styles/*.scss",
+    "./*.js": {
+      "import": "./target/js/*.js"
+    }
   },
   "main": "index.js",
   "scripts": {
-    "preview": "npx webpack serve"
+    "preview": "npx webpack serve --env dev",
+    "bundle": "npx webpack --env bundle"
   },
   "dependencies": {
     "@css-pad/config": "workspace:*"

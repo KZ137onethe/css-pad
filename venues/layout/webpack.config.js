@@ -1,7 +1,11 @@
 import path from "node:path";
-import setConf from "@css-pad/config";
-import { merge } from "webpack-merge";
+import tools from "@css-pad/config/tools";
+import setConf from "@css-pad/config/webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import { merge } from "webpack-merge";
+
+const { getCurrentPath } = tools;
+const __dirname = getCurrentPath(import.meta.url);
 
 export default function (env, args) {
   const { mode = "development" } = args;

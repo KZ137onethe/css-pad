@@ -30,6 +30,10 @@ class ESwitch extends HTMLElement {
     this.state = new ESwitchState();
   }
 
+  static register(): void {
+    customElements.define("e-switch", ESwitch);
+  }
+
   appendStyles(): void {
     this.shadowRoot!.adoptedStyleSheets = [sheet as unknown as CSSStyleSheet];
   }
@@ -90,4 +94,6 @@ class ESwitch extends HTMLElement {
   }
 }
 
-customElements.define("e-switch", ESwitch);
+export {
+  ESwitch,
+};
