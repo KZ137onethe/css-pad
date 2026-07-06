@@ -1,13 +1,13 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": "./",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "paths": {
-      "#/*": ["src/*"]
+      "#/*": ["./src/*"]
     },
     "typeRoots": ["./node_modules/@types", "./types"],
+    "types": ["node"],
     "esModuleInterop": true
   },
   "include": ["**/*"],

@@ -9,7 +9,7 @@ const rootPath = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../
 const ctx = await esbuild.context({
   entryPoints: [
     { in: path.resolve(rootPath, "tools/index.ts"), out: "tools" },
-    { in: path.resolve(rootPath, "webpack/index.ts"), out: "webpack" },
+    { in: path.resolve(rootPath, "main.ts"), out: "webpack" },
   ],
   bundle: true,
   platform: "node",

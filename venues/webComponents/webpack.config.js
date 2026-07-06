@@ -150,6 +150,7 @@ export default function (env, args) {
     ],
     devServer: {
       open: {
+        // 打开路径
         target: "custom-square",
       },
     },

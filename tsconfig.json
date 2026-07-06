@@ -8,9 +8,8 @@
     "useDefineForClassFields": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "baseUrl": "./",
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
     "allowJs": false,
@@ -29,7 +28,6 @@
     "diagnostics": true,
     "declaration": false,
     "declarationMap": false,
-    "downlevelIteration": true,
     "noEmit": true,
     "removeComments": true
   },

@@ -30,6 +30,7 @@
     "sass-loader": "catalog:",
     "style-loader": "catalog:",
     "ts-loader": "catalog:",
+    "tsx": "catalog:",
     "type-fest": "catalog:types",
     "typescript": "catalog:",
     "webpack": "catalog:",
