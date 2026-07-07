@@ -13,6 +13,21 @@
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "skipFiles": ["<node_internals>/**", "${workspaceFolder}/node_modules/**"]
+    },
+    {
+      "name": "debugger javascript",
+      "request": "launch",
+      // 调试文件路径
+      "program": "${file}",
+      // 运行时执行环境
+      "runtimeExecutable": "node",
+      // 调试跳过文件
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node",
+      // 首行端住
+      "stopOnEntry": false,
+      // 打印信息集成在vscode终端
+      "console": "integratedTerminal"
     }
   ]
 }
