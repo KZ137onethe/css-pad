@@ -35,7 +35,6 @@
     "typescript": "catalog:",
     "webpack": "catalog:",
     "webpack-cli": "catalog:",
-    "webpack-dev-server": "catalog:",
-    "webpack-merge": "catalog:"
+    "webpack-dev-server": "catalog:"
   }
 }

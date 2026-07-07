@@ -1,9 +1,8 @@
 import * as path from "node:path";
-// import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
-import tools, { getCurrentPath } from "#/tools/index.ts";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+// import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
+import { adaptiveMerge, getCurrentPath } from "#/tools/index.ts";
 
-const { adaptiveMerge } = tools;
 const __dirname = getCurrentPath(import.meta.url);
 
 const conConf = {
