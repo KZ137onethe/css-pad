@@ -114,9 +114,12 @@ function customMergeFn(fn: CustomMergeFn): MergeFn {
   };
 }
 
-// TODO: 接受传入一个对象, 接受一个合并函数和一个合并配置数组项
-function multipleAdaptiveMerge(target: UnknownRecord, ...args: UnknownRecord[]): UnknownRecord {
-  return [...args].reduce((pre, cur) => adaptiveMerge(pre, cur), target);
+// 接受传入一个数组和函数, 数组的子元素是合并的对象，函数指的是自定义合并函数
+function multipleAdaptiveMerge(
+  mergeArray: UnknownRecord[],
+  mergeFn: MergeFn = defaultMerge,
+): UnknownRecord {
+  return mergeArray.reduce((pre, cur) => adaptiveMerge(pre, cur, mergeFn));
 }
 
 export { getCurrentPath } from "./file.ts";

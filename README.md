@@ -19,3 +19,11 @@
 - [x] esbuild构建打包TypeScript
 
 - [ ] eslint格式化
+
+### 原生封装
+
+- [x] switch开关
+
+  路径：.\packages\common-ui\src\switch
+
+- [ ] 弹窗
