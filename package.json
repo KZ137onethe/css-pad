@@ -18,6 +18,7 @@
     "@types/node": "catalog:",
     "concurrently": "catalog:",
     "copy-webpack-plugin": "catalog:",
+    "cross-env": "catalog:",
     "css-loader": "catalog:",
     "esbuild": "catalog:build",
     "eslint": "catalog:rules",

@@ -8,17 +8,20 @@
   "keywords": [],
   "exports": {
     "./*": {
-      "import": "./target/*.mjs",
-      "require": "./target/*.cjs"
+      "import": "./dist/*.mjs",
+      "require": "./dist/*.cjs"
     }
   },
   "files": [
-    "target"
+    "dist"
   ],
   "scripts": {
-    "dev": "node ./build/index.js"
+    "dev": "cross-env NODE_ENV=dev node ./build/index.js",
+    "build": "cross-env NODE_ENV=prod node ./build/index.js"
   },
   "devDependencies": {
-    "@types/node": "catalog:"
+    "@types/node": "catalog:",
+    "esbuild-plugin-clean": "catalog:",
+    "esbuild-plugin-environment": "catalog:"
   }
 }
