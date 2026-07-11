@@ -86,7 +86,7 @@ class ESwitch extends HTMLElement {
     this.watchElement();
   }
 
-  attributeChangedCallback(name: string, oldVal: string, newVal: string): void {
+  attributeChangedCallback(_name_: string, _old_: string, _new_: string): void {
     // 保证在组件加载完成后，才能调用
     if (this.state.loaded) {
       this.setClassList();
