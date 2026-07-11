@@ -7,7 +7,13 @@
   "keywords": [],
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:web-components": "turbo run dev --filter=@css-pad/web-components"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "10.15.x"
+    }
   },
   "dependencies": {
     "es-toolkit": "catalog:",
@@ -32,6 +38,7 @@
     "style-loader": "catalog:",
     "ts-loader": "catalog:",
     "tsx": "catalog:",
+    "turbo": "catalog:",
     "type-fest": "catalog:types",
     "typescript": "catalog:",
     "webpack": "catalog:",

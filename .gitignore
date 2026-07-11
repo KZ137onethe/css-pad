@@ -2,7 +2,7 @@
 node_modules/
 dist/
 target/
-internal/config/target/
+.turbo
 
 
 # 排除的文件

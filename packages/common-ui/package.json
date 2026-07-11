@@ -15,7 +15,7 @@
   "main": "index.js",
   "scripts": {
     "preview": "npx webpack serve --env dev",
-    "bundle": "npx webpack --env bundle"
+    "build": "npx webpack --env build"
   },
   "dependencies": {
     "@css-pad/config": "workspace:*"

@@ -34,7 +34,7 @@ const mergeFn = customMergeFn({
 });
 
 export default function (env) {
-  const { bundle, dev } = env;
+  const { build, dev } = env;
   /* 开发环境 */
   if (dev) {
     return adaptiveMerge(
@@ -125,7 +125,7 @@ export default function (env) {
       },
       mergeFn,
     );
-  } /* 打包环境 */ else if (bundle) {
+  } /* 打包环境 */ else if (build) {
     return adaptiveMerge(
       setConf("production"),
       {
@@ -206,7 +206,7 @@ export default function (env) {
           ],
         },
         output: {
-          path: path.resolve(__dirname, "target"),
+          path: path.resolve(__dirname, "dist"),
           filename: "js/[name].js",
           chunkFilename: "js/[name].[contenthash:5].chunk.js",
           clean: true,
