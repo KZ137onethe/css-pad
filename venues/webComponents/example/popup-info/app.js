@@ -1,21 +1,24 @@
+import sheetText from "./component.scss?inline";
 import "@css-pad/common-ui/styles/index";
-import sheet from "./component.scss" assert { type: "css" };
 
 class PopupInfo extends HTMLElement {
+  // eslint-disable-next-line no-useless-constructor
   constructor() {
     super();
   }
 
   appendStyle() {
+    const sheet = new CSSStyleSheet();
+    sheet.replaceSync(sheetText);
     this.shadowRoot.adoptedStyleSheets = [sheet];
   }
 
   connectedCallback() {
     const shadow = this.attachShadow({ mode: "open" });
 
-    const [wrapperEl, iconEl, infoEl] = new Array(3)
+    const [wrapperEl, iconEl, infoEl] = Array.from({ length: 3 })
       .fill("span")
-      .map((el) => document.createElement(el));
+      .map(el => document.createElement(el));
 
     wrapperEl.className = "wrapper";
     iconEl.className = "icon";

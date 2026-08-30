@@ -1,5 +1,6 @@
 {
   "name": "@css-pad/web-components",
+  "type": "module",
   "version": "1.0.0",
   "packageManager": "pnpm@10.15.1",
   "description": "",

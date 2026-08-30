@@ -21,6 +21,8 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:rules",
+    "@rsbuild/core": "catalog:",
+    "@rsbuild/plugin-sass": "catalog:",
     "@types/node": "catalog:",
     "concurrently": "catalog:",
     "copy-webpack-plugin": "catalog:",
@@ -44,5 +46,8 @@
     "webpack": "catalog:",
     "webpack-cli": "catalog:",
     "webpack-dev-server": "catalog:"
+  },
+  "volta": {
+    "node": "24.13.0"
   }
 }

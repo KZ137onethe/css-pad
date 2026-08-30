@@ -1,5 +1,5 @@
+import sheetText from "./component.scss?inline";
 import "@css-pad/common-ui/styles/index";
-import sheet from "./component.scss" assert { type: "css" };
 
 class EmojiSwitch extends HTMLElement {
   constructor() {
@@ -7,6 +7,9 @@ class EmojiSwitch extends HTMLElement {
   }
 
   appendStyles() {
+    const sheet = new CSSStyleSheet();
+    sheet.replaceSync(sheetText);
+    console.log(sheetText);
     this.shadowRoot.adoptedStyleSheets = [sheet];
   }
 
