@@ -3,7 +3,6 @@ import path from "node:path";
 import { adaptiveMerge, customMergeFn, getCurrentPath } from "@css-pad/config/tools";
 import setConf from "@css-pad/config/webpack";
 
-import CopyPlugin from "copy-webpack-plugin";
 import * as es from "es-toolkit";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
@@ -177,32 +176,6 @@ export default function (env) {
                 },
               ],
             },
-            // {
-            //   test: /\.css$/,
-            //   oneOf: [
-            //     {
-            //       assert: { type: "css" },
-            //       loader: "css-loader",
-            //       options: {
-            //         exportType: "css-style-sheet",
-            //         // Other options
-            //       },
-            //     },
-            //     {
-            //       use: [
-            //         {
-            //           loader: MiniCssExtractPlugin.loader,
-            //         },
-            //         {
-            //           loader: "css-loader",
-            //           options: {
-            //             url: true,
-            //           },
-            //         },
-            //       ],
-            //     },
-            //   ],
-            // },
           ],
         },
         output: {

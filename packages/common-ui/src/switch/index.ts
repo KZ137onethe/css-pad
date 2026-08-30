@@ -10,6 +10,7 @@ interface StateProps {
   open?: boolean;
 }
 
+// 管理组件内部状态
 class ESwitchState implements StateProps {
   open = false;
   constructor() {

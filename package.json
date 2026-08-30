@@ -7,6 +7,7 @@
   "keywords": [],
   "main": "index.js",
   "scripts": {
+    "build:web-components": "turbo run build --filter=@css-pad/web-components",
     "dev:web-components": "turbo run dev --filter=@css-pad/web-components"
   },
   "devEngines": {
