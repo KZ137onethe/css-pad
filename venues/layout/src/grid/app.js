@@ -1,4 +1,4 @@
-import { ESwitch } from "@css-pad/common-ui/e-switch.js";
+import { ESwitch } from "@css-pad/common-ui/scripts/register";
 import "@css-pad/common-ui/styles/index";
 import "./style.scss";
 
