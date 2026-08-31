@@ -1,5 +1,6 @@
 {
   "name": "@css-pad/common-ui",
+  "type": "module",
   "version": "1.0.0",
   "packageManager": "pnpm@10.15.1",
   "description": "",
@@ -7,15 +8,17 @@
   "license": "ISC",
   "keywords": [],
   "exports": {
-    "./styles/*": "./styles/*.scss",
-    "./*.js": {
-      "import": "./target/js/*.js"
+    "./styles/*": {
+      "import": "./styles/*.scss"
+    },
+    "./scripts/*": {
+      "import": "./dist/scripts/*.js"
     }
   },
   "main": "index.js",
   "scripts": {
-    "preview": "npx webpack serve --env dev",
-    "build": "npx webpack --env build"
+    "preview": "npx rsbuild",
+    "dev": "npx rslib"
   },
   "dependencies": {
     "@css-pad/config": "workspace:*"

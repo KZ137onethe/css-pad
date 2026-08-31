@@ -10,7 +10,8 @@
     "typeRoots": ["./node_modules/@types", "./types"],
     "allowImportingTsExtensions": false,
     "noEmit": false,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "isolatedModules": true
   },
   "include": ["**/*"],
   "exclude": ["node_modules", "target", "build"]

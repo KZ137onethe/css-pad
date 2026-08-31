@@ -1,5 +1,5 @@
-import { makeAutoObservable } from "mobx";
-import sheet from "./style.scss" assert { type: "css" };
+import { reactive } from "@vue/reactivity";
+import sheetText from "./style.scss?inline";
 
 interface Props {
   size: "default" | "small" | "large" | null;
@@ -12,9 +12,7 @@ interface StateProps {
 
 class ESwitchState implements StateProps {
   open = false;
-  constructor() {
-    makeAutoObservable(this);
-  }
+  loaded?: boolean | undefined = undefined;
 }
 
 class ESwitch extends HTMLElement {
@@ -27,7 +25,7 @@ class ESwitch extends HTMLElement {
 
   constructor() {
     super();
-    this.state = new ESwitchState();
+    this.state = reactive(new ESwitchState());
   }
 
   static register(): void {
@@ -35,7 +33,9 @@ class ESwitch extends HTMLElement {
   }
 
   appendStyles(): void {
-    this.shadowRoot!.adoptedStyleSheets = [sheet as unknown as CSSStyleSheet];
+    const sheet = new CSSStyleSheet();
+    sheet.replaceSync(sheetText);
+    this.shadowRoot!.adoptedStyleSheets = [sheet];
   }
 
   setClassList(): void {
@@ -96,4 +96,5 @@ class ESwitch extends HTMLElement {
 
 export {
   ESwitch,
+  ESwitchState,
 };

@@ -16,13 +16,14 @@
     }
   },
   "dependencies": {
-    "es-toolkit": "catalog:",
-    "mobx": "catalog:"
+    "@vue/reactivity": "catalog:",
+    "es-toolkit": "catalog:"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:rules",
     "@rsbuild/core": "catalog:",
     "@rsbuild/plugin-sass": "catalog:",
+    "@rslib/core": "catalog:",
     "@types/node": "catalog:",
     "concurrently": "catalog:",
     "copy-webpack-plugin": "catalog:",
