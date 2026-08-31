@@ -42,4 +42,6 @@
 
 ### 更新记录
 
+* 2026-08-31 将`common-ui`子包的构建工具替换为`rslib`，预览的构建工具替换为`rsbuild`
+
 * 2026-08-30 将`webComponent`和`layout`子包的构建工具替换为`rsbuild`
