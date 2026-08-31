@@ -14,13 +14,14 @@ export default defineConfig(() => {
         format: "esm",
         bundle: true,
         dts: true,
-        output: {
-          distPath: "./dist/scripts",
-        },
       },
     ],
     output: {
+      injectStyles: false,
       target: "web",
+      distPath: "./dist/scripts",
+      cleanDistPath: "./dist/scripts",
+      sourceMap: true,
     },
     plugins: [pluginSass()],
   };
