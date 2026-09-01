@@ -7,7 +7,7 @@ export default defineConfig(({ envMode, env }) => {
   return {
     source: {
       entry: {
-        play: {
+        index: {
           import: ["./play/index.ts"],
         },
       },
@@ -23,7 +23,7 @@ export default defineConfig(({ envMode, env }) => {
     html: {
       template({ entryName }) {
         const store = {
-          play: "./play/index.html",
+          index: "./play/index.html",
         };
         return store[entryName];
       },
