@@ -1,0 +1,58 @@
+# 构建Web component的UI组件库训练场
+name: Web Component UI Preview
+
+on:
+  # 在推送到默认分支时触发
+  push:
+    branches: ['rsbuild']
+  # 允许你从 Actions tabs 手动运行这个工作流
+  workflow_dispatch:
+
+# 设置 GITHUB_TOKEN 的权限以允许部署到 GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同时只允许一个部署执行
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: actions/setup-node@v6
+        with:
+          version: 10.15.0
+
+      - name: Use Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install dependencies
+        run: pnpm i --frozen-lockfile
+
+      - name: Build
+        run: pnpm run ui:preview
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: './packages/ui/dist/preview'
+
+      - name: Deploy to GitHub Pages
+        id: preview
+        uses: actions/deploy-pages@v5
