@@ -4,7 +4,7 @@ name: Web Component UI Preview
 on:
   # 在推送到默认分支时触发
   push:
-    branches: ['rsbuild']
+    branches: ["rsbuild"]
   # 允许你从 Actions tabs 手动运行这个工作流
   workflow_dispatch:
 
@@ -16,7 +16,7 @@ permissions:
 
 # 同时只允许一个部署执行
 concurrency:
-  group: 'pages'
+  group: "pages"
   cancel-in-progress: false
 
 jobs:
@@ -43,7 +43,7 @@ jobs:
         run: pnpm i --frozen-lockfile
 
       - name: Build
-        run: pnpm run ui:preview
+        run: pnpm run ui:build
 
       - name: Setup Pages
         uses: actions/configure-pages@v6
@@ -51,7 +51,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: './packages/ui/dist/preview'
+          path: "./packages/ui/dist/build"
 
   deploy:
     needs: build
@@ -63,5 +63,5 @@ jobs:
 
     steps:
       - name: Deploy to GitHub Pages
-        id: preview
+        id: build
         uses: actions/deploy-pages@v5

@@ -2,6 +2,8 @@ import { defineConfig } from "@rsbuild/core";
 import { pluginSass } from "@rsbuild/plugin-sass";
 
 export default defineConfig(({ envMode, env }) => {
+  const isProd = envMode === "production";
+
   return {
     source: {
       entry: {
@@ -16,11 +18,14 @@ export default defineConfig(({ envMode, env }) => {
       },
     },
     server: {
-      open: true,
+      open: !isProd,
     },
     html: {
       template({ entryName }) {
-        return `./${entryName}/index.html`;
+        const store = {
+          play: "./play/index.html",
+        };
+        return store[entryName];
       },
     },
     resolve: {
@@ -30,7 +35,7 @@ export default defineConfig(({ envMode, env }) => {
     },
     output: {
       distPath: {
-        root: "dist/preview",
+        root: !isProd ? "dist/preview" : "dist/build",
         js: ".",
       },
       filenameHash: {
@@ -41,11 +46,11 @@ export default defineConfig(({ envMode, env }) => {
         html: "[name].html",
         css: "[name].js",
       },
-      sourceMap: "cheap-module-source-map",
+      sourceMap: !isProd ? "cheap-module-source-map" : false,
       cleanDistPath: {
         enable: true,
       },
-      assetPrefix: "/ui",
+      // assetPrefix: "./",
     },
     plugins: [pluginSass()],
   };

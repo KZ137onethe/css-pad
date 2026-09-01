@@ -7,7 +7,7 @@
   "keywords": [],
   "main": "index.js",
   "scripts": {
-    "ui:preview": "pnpm --filter @css-pad/ui preview"
+    "ui:build": "pnpm --filter @css-pad/ui build"
   },
   "devEngines": {
     "packageManager": {
