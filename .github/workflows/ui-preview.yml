@@ -28,14 +28,14 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Setup pnpm
-        uses: actions/setup-node@v6
+        uses: pnpm/action-setup@v6
         with:
           version: 10.15.0
 
       - name: Use Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version: 24.13.0
           cache: pnpm
           cache-dependency-path: pnpm-lock.yaml
 
@@ -53,6 +53,15 @@ jobs:
         with:
           path: './packages/ui/dist/preview'
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
       - name: Deploy to GitHub Pages
         id: preview
         uses: actions/deploy-pages@v5
