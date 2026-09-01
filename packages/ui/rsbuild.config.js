@@ -50,7 +50,7 @@ export default defineConfig(({ envMode, env }) => {
       cleanDistPath: {
         enable: true,
       },
-      // assetPrefix: "./",
+      assetPrefix: "/css-pad",
     },
     plugins: [pluginSass()],
   };
