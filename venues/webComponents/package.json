@@ -12,7 +12,7 @@
     "dev": "npx webpack serve"
   },
   "dependencies": {
-    "@css-pad/common-ui": "workspace:*",
-    "@css-pad/config": "workspace:*"
+    "@css-pad/config": "workspace:*",
+    "@css-pad/ui": "workspace:*"
   }
 }

@@ -40,6 +40,12 @@ catalogs:
     es-toolkit:
       specifier: ^1.49.0
       version: 1.49.0
+    esbuild-plugin-clean:
+      specifier: ^1.0.1
+      version: 1.0.1
+    esbuild-plugin-environment:
+      specifier: ^0.5.0
+      version: 0.5.0
     fork-ts-checker-webpack-plugin:
       specifier: ^9.1.0
       version: 9.1.0
@@ -197,12 +203,12 @@ importers:
         version: 25.2.2
       esbuild-plugin-clean:
         specifier: 'catalog:'
-        version: 1.0.1(esbuild@0.27.7)
+        version: 1.0.1(esbuild@0.28.1)
       esbuild-plugin-environment:
         specifier: 'catalog:'
-        version: 0.5.0(esbuild@0.27.7)
+        version: 0.5.0(esbuild@0.28.1)
 
-  packages/common-ui:
+  packages/ui:
     dependencies:
       '@css-pad/config':
         specifier: workspace:*
@@ -210,21 +216,21 @@ importers:
 
   venues/layout:
     dependencies:
-      '@css-pad/common-ui':
-        specifier: workspace:*
-        version: link:../../packages/common-ui
       '@css-pad/config':
         specifier: workspace:*
         version: link:../../internal/config
+      '@css-pad/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
 
   venues/webComponents:
     dependencies:
-      '@css-pad/common-ui':
-        specifier: workspace:*
-        version: link:../../packages/common-ui
       '@css-pad/config':
         specifier: workspace:*
         version: link:../../internal/config
+      '@css-pad/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
 
 packages:
 
@@ -6687,20 +6693,20 @@ snapshots:
 
   es-toolkit@1.49.0: {}
 
-  esbuild-plugin-clean@1.0.1(esbuild@0.27.7):
+  esbuild-plugin-clean@1.0.1(esbuild@0.28.1):
     dependencies:
       chalk: 4.1.2
       del: 6.1.1
-      esbuild: 0.27.7
+      esbuild: 0.28.1
 
-  esbuild-plugin-define@0.6.0(esbuild@0.27.7):
+  esbuild-plugin-define@0.6.0(esbuild@0.28.1):
     dependencies:
-      esbuild: 0.27.7
+      esbuild: 0.28.1
 
-  esbuild-plugin-environment@0.5.0(esbuild@0.27.7):
+  esbuild-plugin-environment@0.5.0(esbuild@0.28.1):
     dependencies:
-      esbuild: 0.27.7
-      esbuild-plugin-define: 0.6.0(esbuild@0.27.7)
+      esbuild: 0.28.1
+      esbuild-plugin-define: 0.6.0(esbuild@0.28.1)
 
   esbuild@0.27.7:
     optionalDependencies:

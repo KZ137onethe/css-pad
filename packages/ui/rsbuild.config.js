@@ -45,6 +45,7 @@ export default defineConfig(({ envMode, env }) => {
       cleanDistPath: {
         enable: true,
       },
+      assetPrefix: "/ui",
     },
     plugins: [pluginSass()],
   };

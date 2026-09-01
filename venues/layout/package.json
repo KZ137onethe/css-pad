@@ -13,8 +13,8 @@
     "prod": "npx webpack --env production"
   },
   "dependencies": {
-    "@css-pad/common-ui": "workspace:*",
-    "@css-pad/config": "workspace:*"
+    "@css-pad/config": "workspace:*",
+    "@css-pad/ui": "workspace:*"
   },
   "devDependencies": {}
 }
