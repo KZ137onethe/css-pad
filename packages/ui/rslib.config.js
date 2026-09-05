@@ -7,6 +7,7 @@ export default defineConfig(() => {
       entry: {
         register: "./src/index.ts",
         "e-switch": "./src/switch/index.ts",
+        "e-progress": "./src/progress/index.ts",
       },
     },
     lib: [
@@ -14,6 +15,7 @@ export default defineConfig(() => {
         format: "esm",
         bundle: true,
         dts: true,
+        syntax: "es6",
       },
     ],
     output: {

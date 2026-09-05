@@ -44,7 +44,7 @@ export default defineConfig(({ envMode, env }) => {
       filename: {
         js: "[name].js",
         html: "[name].html",
-        css: "[name].js",
+        css: "[name].css",
       },
       sourceMap: !isProd ? "cheap-module-source-map" : false,
       cleanDistPath: {
