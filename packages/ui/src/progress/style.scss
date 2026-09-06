@@ -1,4 +1,15 @@
+:root {
+  // --progress: 0%;
+  --progress-color: red;
+}
+
 .progress {
+  // @property --progress {
+  //   syntax: "<percentage>";
+  //   inherits: false;
+  //   initial-value: 0%;
+  // }
+
   .circle {
     position: relative;
     display: flex;
@@ -8,6 +19,8 @@
     width: 100px;
     height: 100px;
     border-radius: 50%;
+
+    background: conic-gradient(var(--progress-color) var(--progress), transparent 0%);
 
     &::before {
       content: "";
