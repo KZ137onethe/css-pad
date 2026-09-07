@@ -8,9 +8,7 @@
   "keywords": [],
   "main": "index.js",
   "scripts": {
-    "dev": "npx webpack serve",
-    "bundle": "npx webpack",
-    "prod": "npx webpack --env production"
+    "dev": "npx rsbuild"
   },
   "dependencies": {
     "@css-pad/config": "workspace:*",

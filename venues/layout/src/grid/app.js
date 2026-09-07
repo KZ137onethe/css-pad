@@ -1,5 +1,5 @@
-import { ESwitch } from "@css-pad/common-ui/scripts/register";
-import "@css-pad/common-ui/styles/index";
+import { ESwitch } from "@css-pad/ui/scripts/register";
+import "@css-pad/ui/styles/index";
 import "./style.scss";
 
 ESwitch.register();
