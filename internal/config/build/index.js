@@ -12,8 +12,7 @@ const env = process.env.NODE_ENV;
 
 const conf = {
   entryPoints: [
-    { in: path.resolve(rootPath, "tools/index.ts"), out: "tools" },
-    { in: path.resolve(rootPath, "main.ts"), out: "webpack" },
+    { in: path.resolve(rootPath, "index.ts"), out: "main" },
   ],
   bundle: true,
   platform: "node",
@@ -22,11 +21,11 @@ const conf = {
   outExtension: { ".js": ".mjs" },
   format: "esm",
   // 标记为 外部，不参与打包
-  external: ["mini-css-extract-plugin", "fork-ts-checker-webpack-plugin"],
+  external: [],
   treeShaking: true,
   allowOverwrite: true,
   alias: {
-    "#": rootPath,
+    "@": rootPath,
   },
   resolveExtensions: [".ts"],
   plugins: [
