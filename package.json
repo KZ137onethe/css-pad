@@ -16,8 +16,8 @@
     }
   },
   "dependencies": {
-    "@vue/reactivity": "catalog:",
-    "es-toolkit": "catalog:"
+    "es-toolkit": "catalog:",
+    "nanostores": "catalog:"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:rules",
@@ -25,28 +25,15 @@
     "@rsbuild/plugin-sass": "catalog:",
     "@rslib/core": "catalog:",
     "@types/node": "catalog:",
-    "concurrently": "catalog:",
-    "copy-webpack-plugin": "catalog:",
     "cross-env": "catalog:",
-    "css-loader": "catalog:",
     "esbuild": "catalog:build",
     "eslint": "catalog:rules",
-    "fork-ts-checker-webpack-plugin": "catalog:",
-    "html-webpack-plugin": "catalog:",
-    "mini-css-extract-plugin": "catalog:",
     "postcss": "catalog:",
     "postcss-preset-env": "catalog:",
-    "sass": "catalog:",
-    "sass-loader": "catalog:",
-    "style-loader": "catalog:",
-    "ts-loader": "catalog:",
     "tsx": "catalog:",
     "turbo": "catalog:",
     "type-fest": "catalog:types",
-    "typescript": "catalog:",
-    "webpack": "catalog:",
-    "webpack-cli": "catalog:",
-    "webpack-dev-server": "catalog:"
+    "typescript": "catalog:"
   },
   "volta": {
     "node": "24.13.0"
