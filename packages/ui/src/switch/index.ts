@@ -1,4 +1,5 @@
-import { reactive } from "@vue/reactivity";
+import type { PreinitializedMapStore } from "nanostores";
+import { map } from "nanostores";
 import sheetText from "./style.scss?inline";
 
 interface Props {
@@ -18,14 +19,14 @@ class ESwitchState implements StateProps {
 class ESwitch extends HTMLElement {
   private class_prefix = "switch-";
   private rootEl?: HTMLLabelElement;
-  public state: StateProps;
+  public state: PreinitializedMapStore<StateProps>;
   static get observedAttributes(): string[] {
     return ["size"];
   }
 
   constructor() {
     super();
-    this.state = reactive(new ESwitchState());
+    this.state = map<StateProps>(new ESwitchState());
   }
 
   static register(): void {
@@ -58,7 +59,7 @@ class ESwitch extends HTMLElement {
     const inputEl = this.rootEl?.querySelector("input");
 
     inputEl?.addEventListener("input", (e: InputEvent) => {
-      this.state.open = (e.target as HTMLInputElement).checked;
+      this.state.setKey("open", (e.target as HTMLInputElement).checked);
     });
   }
 
@@ -80,15 +81,16 @@ class ESwitch extends HTMLElement {
     this.setClassList();
 
     shadow.append(rootEl);
-    this.state.loaded = true;
+    this.state.setKey("loaded", true);
 
     // 开启监听
     this.watchElement();
   }
 
   attributeChangedCallback(_name_: string, _old_: string, _new_: string): void {
+    const { loaded } = this.state.value;
     // 保证在组件加载完成后，才能调用
-    if (this.state.loaded) {
+    if (loaded) {
       this.setClassList();
     }
   }

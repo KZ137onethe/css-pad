@@ -1,9 +1,10 @@
+import type { PreinitializedMapStore } from "nanostores";
 import type { ESwitchState } from "@/index";
-import { watch } from "@vue/reactivity";
+import { listenKeys } from "nanostores";
 import { EProgress, ESwitch } from "@/index";
 
 type SwitchProps = HTMLElement & {
-  state: ESwitchState;
+  state: PreinitializedMapStore<ESwitchState>;
 };
 
 const switchEl = document.querySelector("e-switch#large") as SwitchProps;
@@ -15,8 +16,8 @@ function loaded(): void {
   ESwitch.register();
   EProgress.register();
 
-  watch(() => switchEl.state.open, (newVal) => {
-    console.log("当前 switch 组件状态:", newVal);
+  listenKeys(switchEl.state, ["open"], (value, oldValue, changed) => {
+    console.log(`当前 switch 组件状态: ${value.open}`);
   });
 
   console.log(progressEl?.getAttribute("degree"));
