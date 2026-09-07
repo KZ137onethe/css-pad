@@ -1,5 +1,5 @@
 import sheetText from "./component.scss?inline";
-import "@css-pad/common-ui/styles/index";
+import "@css-pad/ui/styles/index";
 
 class EmojiSwitch extends HTMLElement {
   constructor() {

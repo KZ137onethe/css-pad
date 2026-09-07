@@ -9,7 +9,7 @@
   "keywords": [],
   "main": "index.js",
   "scripts": {
-    "dev": "npx webpack serve"
+    "dev": "npx rsbuild"
   },
   "dependencies": {
     "@css-pad/config": "workspace:*",

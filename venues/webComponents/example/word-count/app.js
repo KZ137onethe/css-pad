@@ -1,4 +1,4 @@
-import "@css-pad/common-ui/styles/index";
+import "@css-pad/ui/styles/index";
 import "./style.scss";
 
 // 参考: https://github.com/mdn/web-components-examples/tree/main/word-count-web-component
