@@ -1,14 +1,8 @@
 :root {
-  // --progress: 0%;
   --progress-color: red;
 }
 
 .progress {
-  // @property --progress {
-  //   syntax: "<percentage>";
-  //   inherits: false;
-  //   initial-value: 0%;
-  // }
 
   .circle {
     position: relative;

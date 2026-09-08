@@ -19,6 +19,4 @@ function loaded(): void {
   listenKeys(switchEl.state, ["open"], (value, oldValue, changed) => {
     console.log(`当前 switch 组件状态: ${value.open}`);
   });
-
-  console.log(progressEl?.getAttribute("degree"));
 }
