@@ -1,0 +1,8 @@
+.layout {
+  display: grid;
+  // 每行创建 5 个网格
+  grid-template-columns: repeat(5, 1fr);
+  // 每个网格的高度至少为100px，可以随着父盒子自动扩展高度
+  grid-auto-rows: minmax(80px, auto);
+  margin: 10px 0;
+}

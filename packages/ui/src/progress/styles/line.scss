@@ -1,0 +1,35 @@
+.progress {
+  --progress-height-element-line: 10px;
+  display: flex;
+  box-sizing: border-box;
+  width: 300px;
+  height: 30px;
+  margin: 0 5px 5px 0;
+  align-items: center;
+
+  .line {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    height: var(--progress-height-element-line);
+    background-color: #f8f9fa;
+    border-radius: 5px;
+
+    &::before {
+      content: "";
+      inset-inline-start: 0;
+      top: 0;
+      position: absolute;
+      width: var(--progress, 0%);
+      height: inherit;
+      border-radius: inherit;
+      background-color: var(--progress-color, skyblue);
+    }
+  }
+
+  .content {
+    flex: 0 0 2em;
+    height: var(--progress-height-element-line);
+    padding-inline-start: 8px;
+  }
+}
