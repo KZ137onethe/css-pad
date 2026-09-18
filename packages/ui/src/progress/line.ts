@@ -6,12 +6,6 @@ import type { ProgressView } from "./type";
 // import { map } from "nanostores";
 import sheetText from "./styles/line.scss?inline";
 
-interface AnimateCallbackArgs {
-  value: number;
-  ani: Animation;
-  duration: number;
-}
-
 function createLineView(): ProgressView<EProgress> {
   const element = document.createElement("div");
   element.classList.add("progress");

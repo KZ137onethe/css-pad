@@ -1,0 +1,24 @@
+button {
+  --bg-color: white;
+  --text-color: black;
+  --border-color: color-mix(in srgb, var(--text-color) 30%, white);
+
+  position: relative;
+  padding: 4px 15px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1;
+
+  &:hover {
+    // 原色 90% + 黑色 15%
+    background-color: color-mix(in srgb, var(--bg-color) 90%, black);
+  }
+
+  &:active {
+    // 原色 90% + 黑色 15%
+    background-color: color-mix(in srgb, var(--bg-color) 90%, black);
+  }
+}

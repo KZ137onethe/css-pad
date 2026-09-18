@@ -8,7 +8,7 @@ const viewFactories: Record<ProgressType, () => ProgressView> = {
 };
 
 class EProgress extends HTMLElement implements ProgressProps {
-  static observedAttributes = ["type", "value", "animate", "color"];
+  static observedAttributes = ["type", "value", "ani", "color"];
 
   private root = this.attachShadow({ mode: "open" });
   private view?: ProgressView;
