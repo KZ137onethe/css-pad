@@ -3,7 +3,7 @@
     "incremental": false,
     "target": "ESNext",
     "jsx": "preserve",
-    "lib": ["DOM", "ES2022", "ScriptHost", "ES2019.Array"],
+    "lib": ["DOM", "ES2022", "ScriptHost", "ES2019.Array", "DOM.Iterable"],
     "moduleDetection": "legacy",
     "useDefineForClassFields": true,
     "emitDecoratorMetadata": true,

@@ -1,24 +1,76 @@
 button {
-  --bg-color: white;
-  --text-color: black;
-  --border-color: color-mix(in srgb, var(--text-color) 30%, white);
+  --bg-color: black;
+  --text-color: white;
+  --border-color: color-mix(in srgb, var(--text-color) 30%, var(--bg-color));
 
   position: relative;
   padding: 4px 15px;
   background-color: var(--bg-color);
   color: var(--text-color);
-  border: 1px solid var(--border-color);
+  border: none;
   border-radius: 8px;
   cursor: pointer;
   z-index: 1;
 
   &:hover {
-    // 原色 90% + 黑色 15%
+    // 原色 90% + 黑色 10%
     background-color: color-mix(in srgb, var(--bg-color) 90%, black);
   }
 
   &:active {
-    // 原色 90% + 黑色 15%
+    // 原色 90% + 黑色 10%
     background-color: color-mix(in srgb, var(--bg-color) 90%, black);
+  }
+
+  // 小号按钮
+  &.small {
+    padding: 3px 8px;
+  }
+  // 大号按钮
+  &.large {
+    padding: 6px 20px;
+  }
+
+  // 按钮类型
+  &.outline {
+    --bg-color: white;
+    --text-color: black;
+    border: 1px solid var(--border-color);
+  }
+  &.secondary {
+    --bg-color: white;
+    --text-color: black;
+    background-color: color-mix(in srgb, var(--bg-color) 90%, var(--text-color));
+    &:hover,
+    &:active {
+      background-color: color-mix(in srgb, var(--bg-color) 80%, var(--text-color));
+    }
+  }
+  &.ghost {
+    --bg-color: white;
+    --text-color: black;
+    &:hover,
+    &:active {
+      background-color: color-mix(in srgb, var(--bg-color) 90%, var(--text-color));
+    }
+  }
+  &.destructive {
+    --bg-color: color-mix(in srgb, white 90%, red);
+    --text-color: red;
+    &:hover,
+    &:active {
+      background-color: color-mix(in srgb, var(--bg-color) 80%, var(--text-color));
+    }
+  }
+  &.link {
+    --bg-color: white;
+    --text-color: black;
+    &:hover,
+    &:active {
+      background-color: var(--bg-color);
+      > span {
+        border-bottom: 1px solid var(--text-color);
+      }
+    }
   }
 }

@@ -8,6 +8,7 @@ export default defineConfig(() => {
         register: "./src/index.ts",
         "e-switch": "./src/switch/index.ts",
         "e-progress": "./src/progress/index.ts",
+        "e-button": "./src/button/index.ts",
       },
     },
     lib: [
@@ -18,6 +19,12 @@ export default defineConfig(() => {
         syntax: "es6",
       },
     ],
+    resolve: {
+      alias: {
+        "@": "./src",
+        "~": "./utils",
+      },
+    },
     output: {
       injectStyles: false,
       target: "web",
@@ -25,6 +32,7 @@ export default defineConfig(() => {
       cleanDistPath: "./dist/scripts",
       sourceMap: true,
     },
+
     plugins: [pluginSass()],
   };
 });

@@ -13,6 +13,21 @@ interface ButtonView<T = any> {
   addEventListener: () => void;
 }
 
+type ToAttrs<T> = {
+  [K in keyof T]-?: Exclude<T[K], undefined> | null;
+};
+
+interface ButtonProps {
+  // 尺寸大小
+  size?: "default" | "small" | "large";
+  // 变体
+  variant?: "default" | "outline" | "secondary" | "ghost" | "destructive" | "link";
+}
+
+type ButtonAttrs = ToAttrs<ButtonProps>;
+
 export type {
+  ButtonAttrs,
+  ButtonProps,
   ButtonView,
 };

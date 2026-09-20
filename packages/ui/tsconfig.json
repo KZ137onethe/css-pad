@@ -5,7 +5,8 @@
     "moduleResolution": "bundler",
     "paths": {
       "#/*": ["./*"],
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "~/*": ["./utils/*"]
     },
     "typeRoots": ["./node_modules/@types", "./types"],
     "allowImportingTsExtensions": false,
