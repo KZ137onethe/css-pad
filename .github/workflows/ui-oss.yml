@@ -1,0 +1,92 @@
+name: Deploy UI preview to Aliyun OSS
+
+on:
+  push:
+    branches:
+      - rsbuild
+    paths:
+      - "packages/ui/**"
+      - ".github/workflows/ui-oss.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ui-oss-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: aliyun-oss
+    env:
+      OSS_ACCESS_KEY_ID: ${{ secrets.ALIYUN_OSS_ACCESS_KEY_ID }}
+      OSS_ACCESS_KEY_SECRET: ${{ secrets.ALIYUN_OSS_ACCESS_KEY_SECRET }}
+      OSS_ENDPOINT: ${{ vars.ALIYUN_OSS_ENDPOINT }}
+      OSS_REGION: ${{ vars.ALIYUN_OSS_REGION }}
+      OSS_BUCKET: ${{ vars.ALIYUN_OSS_BUCKET }}
+      OSS_PREFIX: ${{ vars.ALIYUN_OSS_PREFIX }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: 10.15.1
+
+      - name: Use Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24.13.0
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build UI preview
+        run: pnpm run ui:build
+
+      - name: Validate OSS configuration
+        shell: bash
+        run: |
+          required=(
+            OSS_ACCESS_KEY_ID
+            OSS_ACCESS_KEY_SECRET
+            OSS_ENDPOINT
+            OSS_REGION
+            OSS_BUCKET
+            OSS_PREFIX
+          )
+          for name in "${required[@]}"; do
+            if [[ -z "${!name}" ]]; then
+              echo "::error::$name is not configured"
+              exit 1
+            fi
+          done
+
+      - name: Install ossutil
+        shell: bash
+        run: |
+          version="2.4.0"
+          archive="ossutil-${version}-linux-amd64.zip"
+          curl --fail --silent --show-error --location \
+            "https://gosspublic.alicdn.com/ossutil/v2/${version}/${archive}" \
+            --output "$archive"
+          echo "85edf66b2fb7238f5c7e25cab820cf29312319fe4935b7c86a6b8485eb434f3c  $archive" | sha256sum --check
+          unzip -q "$archive"
+          install -m 755 "ossutil-${version}-linux-amd64/ossutil" "$RUNNER_TEMP/ossutil"
+
+      - name: Upload UI build to OSS
+        shell: bash
+        run: |
+          prefix="${OSS_PREFIX#/}"
+          prefix="${prefix%/}"
+          "$RUNNER_TEMP/ossutil" cp \
+            "packages/ui/dist/build/" \
+            "oss://${OSS_BUCKET}/${prefix}/" \
+            --recursive \
+            --force

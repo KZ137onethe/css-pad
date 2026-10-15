@@ -1,5 +1,5 @@
 import type { PreinitializedMapStore } from "nanostores";
-import type { ESwitchState } from "@/index";
+import type { EButton as EButtonProps, ESwitchState } from "@/index";
 import { listenKeys } from "nanostores";
 import { EButton, EProgress, ESwitch } from "@/index";
 import "./style.scss";
@@ -9,6 +9,7 @@ type SwitchProps = HTMLElement & {
 };
 
 const switchEl = document.querySelector("e-switch#large") as SwitchProps;
+const buttonEl = document.querySelector("e-button") as EButtonProps;
 
 document.addEventListener("DOMContentLoaded", loaded);
 
